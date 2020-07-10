@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * @author madongyu
@@ -14,11 +15,12 @@ import java.util.concurrent.locks.ReentrantLock;
 public class ReentrantLockTest2 implements Runnable{
 
     private static  Lock lock = new ReentrantLock();
-
+    private static  ReentrantReadWriteLock readWriteLock= new  ReentrantReadWriteLock();
 
 
 
     public static void main(String[] args) throws InterruptedException {
+
         ReentrantLockTest2 test =new ReentrantLockTest2();
         Thread t1 = new Thread(test);
         Thread t2 = new Thread(test);
