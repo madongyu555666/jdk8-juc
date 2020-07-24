@@ -24,6 +24,7 @@ public class ReentrantLockTest2 implements Runnable{
         ReentrantLockTest2 test =new ReentrantLockTest2();
         Thread t1 = new Thread(test);
         Thread t2 = new Thread(test);
+
         t1.start();
         t2.start();
         t1.join();
